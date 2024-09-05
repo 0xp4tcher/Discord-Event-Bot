@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  discord_bot:
+    build: .
+    container_name: discord-event-bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./discordbot.py:/app/discordbot.py
+      - ./discord-app-434407-fed76dfbd5d6.json:/app/discord-app-434407-fed76dfbd5d6.json
